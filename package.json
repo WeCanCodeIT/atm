@@ -19,5 +19,9 @@
   "homepage": "https://github.com/WeCanCodeIT/atm#readme",
   "devDependencies": {
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "readline-sync": "^1.4.9"
   }
 }
