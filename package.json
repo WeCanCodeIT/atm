@@ -1,0 +1,23 @@
+{
+  "name": "atm",
+  "version": "1.0.0",
+  "description": "An example ATM that will interact with multiple bank account types. The goal is to emphasize OOP principles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeCanCodeIT/atm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeCanCodeIT/atm/issues"
+  },
+  "homepage": "https://github.com/WeCanCodeIT/atm#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
