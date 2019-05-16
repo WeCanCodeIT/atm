@@ -10,4 +10,4 @@ An example ATM that will interact with multiple bank account types. The goal is 
 1. Initialize Node project
 1. Create directory structure (src, \_\_tests\_\_, etc.)
 1. Add `.gitignore`
-2. Add dependencies (may not need any?)
+2. Add dependencies (Jest)
