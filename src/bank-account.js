@@ -1,6 +1,11 @@
 class BankAccount {
-  constructor(balance) {
+  constructor(accountNumber, balance = 250) {
+    this._accountNumber = accountNumber;
     this._balance = balance;
+  }
+
+  get accountNumber() {
+    return this._accountNumber;
   }
 
   get balance() {
