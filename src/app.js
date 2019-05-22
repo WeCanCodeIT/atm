@@ -13,7 +13,7 @@ atm.addAccount(new BankAccount("2345", 600));
 atm.addAccount(new BankAccount("3456", 700));
 atm.addAccount(new BankAccount("1234", 124321));
 
-console.log("Welcome to our ATM!\n");
+console.log(blueText("Welcome to our ATM!\n"));
 console.log(`Here are your available accounts:\n`);
 
 atm.accounts.forEach(account => {
