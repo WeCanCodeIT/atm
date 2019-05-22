@@ -14,22 +14,24 @@ describe("Atm", () => {
     expect(underTest.accountsSize).toBe(1);
   });
 
-  test("should be able to remove last added account", () => {
+  test("should be able to remove specific account", () => {
     //Arrange
     const account = new BankAccount("1234");
     underTest.addAccount(account);
 
     //Act
-    const removedAccount = underTest.removeLastAccount;
+    const removedAccount = underTest.removeAccount("1234");
 
     //Assert
-    expect(removedAccount instanceof BankAccount).toBeTruthy();
+    // Array example
+    // expect(removedAccount instanceof BankAccount).toBeTruthy();
+    expect(removedAccount).toBe(account);
   });
 
   test("should return list of accounts", () => {
     //Arrange
     const account = new BankAccount("1234");
-    const accountTwo = new BankAccount("1234", 500);
+    const accountTwo = new BankAccount("2345", 500);
     underTest.addAccount(account);
     underTest.addAccount(accountTwo);
 
@@ -41,5 +43,16 @@ describe("Atm", () => {
     expect(JSON.stringify(accounts)).toBe(
       JSON.stringify([account, accountTwo])
     );
+  });
+
+  test("should return specific account when given acct number", () => {
+    //Arrange
+    const account = new BankAccount("1234");
+    underTest.addAccount(account);
+
+    //Act
+    const chosenAccount = underTest.selectAccount("1234");
+
+    expect(chosenAccount).toBe(account);
   });
 });

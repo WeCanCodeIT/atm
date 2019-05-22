@@ -7,14 +7,11 @@ const Atm = require("./atm");
 const blueText = chalk.blue;
 
 const atm = new Atm();
-const account = new BankAccount("1234", 500);
-const account2 = new BankAccount("2345", 600);
-const account3 = new BankAccount("3456", 700);
 
-atm.addAccount(account);
-atm.addAccount(account2);
-atm.addAccount(account3);
-atm.addAccount(new BankAccount("666", 124321));
+atm.addAccount(new BankAccount("1234", 500));
+atm.addAccount(new BankAccount("2345", 600));
+atm.addAccount(new BankAccount("3456", 700));
+atm.addAccount(new BankAccount("1234", 124321));
 
 console.log("Welcome to our ATM!\n");
 console.log(`Here are your available accounts:\n`);
@@ -24,7 +21,7 @@ atm.accounts.forEach(account => {
 });
 
 atm.selectAccount(
-  input("Please select an account by typing its account number: ")
+  input.question("Please select an account by typing its account number: ")
 );
 
 console.log("What action would you like to perform? ");
