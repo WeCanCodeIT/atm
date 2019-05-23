@@ -22,6 +22,11 @@ class BankAccount {
     }
     this.withdraw(withdrawalAmount);
   }
+
+  // Overriding parent methods
+  toString() {
+    return `Account: ${this._accountNumber} has a balance of ${this._balance}`;
+  }
 }
 
 module.exports = BankAccount;
