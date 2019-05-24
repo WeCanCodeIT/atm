@@ -1,4 +1,4 @@
-const CheckingAccount = require("../src/checking-account");
+const CheckingAccount = require("../src/accounts/checking-account");
 
 describe("CheckingAccount", () => {
   let underTest;
@@ -18,7 +18,7 @@ describe("CheckingAccount", () => {
   });
 
   test("should return false when below minimum balance", () => {
-    underTest.withdrawMultipleOfTen(910);
+    underTest.withdraw(910);
     const isAboveMinimumBalance = underTest.balanceCheck;
 
     expect(isAboveMinimumBalance).toBeFalsy();

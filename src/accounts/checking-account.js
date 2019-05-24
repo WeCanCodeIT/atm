@@ -9,6 +9,13 @@ class CheckingAccount extends BankAccount {
   get balanceCheck() {
     return this._minimumBalance < this.balance;
   }
+
+  withdraw(withdrawalAmount) {
+    if (withdrawalAmount % 10 !== 0) {
+      throw new Error("Only multiples of 10!");
+    }
+    this.decreaseBalance(withdrawalAmount);
+  }
 }
 
 module.exports = CheckingAccount;

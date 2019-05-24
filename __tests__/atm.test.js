@@ -1,5 +1,5 @@
 const Atm = require("../src/atm");
-const BankAccount = require("../src/bank-account");
+const CheckingAccount = require("../src/accounts/checking-account");
 
 describe("Atm", () => {
   let underTest;
@@ -9,14 +9,14 @@ describe("Atm", () => {
   });
 
   test("should be able to add a BankAccount", () => {
-    const account = new BankAccount("1234");
+    const account = new CheckingAccount("1234");
     underTest.addAccount(account);
     expect(underTest.accountsSize).toBe(1);
   });
 
   test("should be able to remove specific account", () => {
     //Arrange
-    const account = new BankAccount("1234");
+    const account = new CheckingAccount("1234");
     underTest.addAccount(account);
 
     //Act
@@ -30,8 +30,8 @@ describe("Atm", () => {
 
   test("should return list of accounts", () => {
     //Arrange
-    const account = new BankAccount("1234");
-    const accountTwo = new BankAccount("2345", 500);
+    const account = new CheckingAccount("1234");
+    const accountTwo = new CheckingAccount("2345", 500);
     underTest.addAccount(account);
     underTest.addAccount(accountTwo);
 
@@ -47,7 +47,7 @@ describe("Atm", () => {
 
   test("should return specific account when given acct number", () => {
     //Arrange
-    const account = new BankAccount("1234");
+    const account = new CheckingAccount("1234");
     underTest.addAccount(account);
 
     //Act

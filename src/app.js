@@ -1,17 +1,17 @@
 const input = require("readline-sync");
 const chalk = require("chalk");
 
-const BankAccount = require("./bank-account");
+const CheckingAccount = require("./accounts/checking-account");
 const Atm = require("./atm");
 
 const blueText = chalk.blue;
 
 const atm = new Atm();
 
-atm.addAccount(new BankAccount("1234", 500));
-atm.addAccount(new BankAccount("2345", 600));
-atm.addAccount(new BankAccount("3456", 700));
-atm.addAccount(new BankAccount("1234", 124321));
+atm.addAccount(new CheckingAccount("1234", 500));
+atm.addAccount(new CheckingAccount("2345", 600));
+atm.addAccount(new CheckingAccount("3456", 700));
+atm.addAccount(new CheckingAccount("1234", 124321));
 
 console.log(blueText("Welcome to our ATM!\n"));
 console.log(`Here are your available accounts:\n`);
@@ -49,7 +49,7 @@ function withdrawSelection() {
   const withdrawalResponse = input.question(
     "How much would you you like to withdraw?\n\n> :  "
   );
-  selectedAccount.withdrawMultipleOfTen(withdrawalResponse);
+  selectedAccount.withdraw(withdrawalResponse);
   console.log(
     `You withdrew ${withdrawalResponse}\nRemaining balance is: ${
       selectedAccount.balance
